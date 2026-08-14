@@ -1,0 +1,138 @@
+6<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Git — The Evolution of AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="intro" class="intro">
+    <div class="intro-logo">AI<span>GIT</span></div>
+    <div class="intro-sub">THE EVOLUTION OF AI</div>
+  </div>
+
+  <header class="navbar">
+    <div class="brand" onclick="goHome()">AI<span>GIT</span></div>
+    <nav>
+      <button onclick="goHome()">Home</button>
+      <button onclick="openEpisode('problem')">The Problem</button>
+      <button onclick="openEpisode('why')">Why AI Git</button>
+      <button onclick="openEpisode('architecture')">Architecture</button>
+      <button onclick="openEpisode('progress')">Our Journey</button>
+    </nav>
+    <button class="presentation-btn" onclick="startPresentation()">▶ Presentation</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">AN ORIGINAL ENGINEERING STORY</p>
+        <h1>AI GIT</h1>
+        <h2>Because your AI deserves a history.</h2>
+        <p class="hero-copy">
+          A version-control experience built around AI checkpoints —
+          track what changed, compare versions, reproduce experiments,
+          and understand your model's evolution.
+        </p>
+        <div class="hero-actions">
+          <button class="primary" onclick="startPresentation()">▶ Play Presentation</button>
+          <button class="secondary" onclick="openEpisode('problem')">More Info</button>
+        </div>
+      </div>
+      <div class="hero-checkpoints">
+        <div class="checkpoint c1">v1<br><small>Works.</small></div>
+        <div class="line"></div>
+        <div class="checkpoint c2">v2<br><small>Better.</small></div>
+        <div class="line"></div>
+        <div class="checkpoint c3">v3<br><small>WHY?!</small></div>
+        <div class="line"></div>
+        <div class="checkpoint c4">v4<br><small>Fixed.</small></div>
+      </div>
+    </section>
+
+    <section class="continue">
+      <div class="section-heading">
+        <h2>Continue Watching</h2>
+        <span>AI Git — The Story So Far</span>
+      </div>
+      <div class="cards">
+        <article class="card featured" onclick="openEpisode('problem')">
+          <div class="card-art art-red">01</div>
+          <div class="card-info"><b>AI Has Commitment Issues</b><small>Episode 1 · The Problem</small></div>
+        </article>
+        <article class="card" onclick="openEpisode('why')">
+          <div class="card-art art-purple">02</div>
+          <div class="card-info"><b>Why AI Git?</b><small>Episode 2 · The Solution</small></div>
+        </article>
+        <article class="card" onclick="openEpisode('checkpoints')">
+          <div class="card-art art-blue">03</div>
+          <div class="card-info"><b>Meet the Checkpoints</b><small>Episode 3 · Core Idea</small></div>
+        </article>
+        <article class="card" onclick="openEpisode('architecture')">
+          <div class="card-art art-green">04</div>
+          <div class="card-info"><b>Under the Hood</b><small>Episode 4 · Architecture</small></div>
+        </article>
+        <article class="card" onclick="openEpisode('code')">
+          <div class="card-art art-orange">05</div>
+          <div class="card-info"><b>How We Made It</b><small>Episode 5 · Code</small></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="section-heading"><h2>Season 1 — The Problem</h2><span>Previously on AI...</span></div>
+      <div class="wide-cards">
+        <article class="wide-card" onclick="openEpisode('problem')"><div class="poster">AI<br>HAS<br>COMMITMENT<br>ISSUES</div><h3>Ep. 1 · The Problem</h3><p>What changed?</p></article>
+        <article class="wide-card" onclick="openEpisode('why')"><div class="poster poster-2">ONE<br>SMALL<br>CHANGE</div><h3>Ep. 2 · The Mystery</h3><p>Everything was working yesterday.</p></article>
+        <article class="wide-card" onclick="openEpisode('memes')"><div class="poster poster-3">BECAUSE<br>WE<br>SUFFERED</div><h3>Bonus · The Memes</h3><p>Every engineering team's villain arc.</p></article>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="section-heading"><h2>Season 2 — How It Works</h2><span>Enter the system</span></div>
+      <div class="wide-cards">
+        <article class="wide-card" onclick="openEpisode('checkpoints')"><div class="poster poster-4">CHECK<br>POINTS</div><h3>Ep. 1 · Meet the Checkpoints</h3><p>AI versions with a memory.</p></article>
+        <article class="wide-card" onclick="openEpisode('architecture')"><div class="poster poster-5">UNDER<br>THE<br>HOOD</div><h3>Ep. 2 · Architecture</h3><p>What happens behind the scenes.</p></article>
+        <article class="wide-card" onclick="openEpisode('code')"><div class="poster poster-6">HOW<br>WE<br>MADE IT</div><h3>Ep. 3 · Code</h3><p>The pieces that make it work.</p></article>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="section-heading"><h2>Season 3 — Our Journey</h2><span>Previously on AI Git...</span></div>
+      <div class="journey-strip" onclick="openEpisode('progress')">
+        <div><strong>DAY 01</strong><span>💡 Idea</span></div>
+        <i>→</i><div><strong>DAY 07</strong><span>🏗 Prototype</span></div>
+        <i>→</i><div><strong>DAY 14</strong><span>📦 Storage</span></div>
+        <i>→</i><div><strong>DAY 21</strong><span>🔍 Comparison</span></div>
+        <i>→</i><div><strong>DAY 30</strong><span>🚀 Demo</span></div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="section-heading"><h2>Because We Suffered</h2><span>Fan favorites</span></div>
+      <div class="meme-grid">
+        <div class="meme" onclick="openMeme('WHEN THE MODEL FINALLY WORKS')">WHEN THE MODEL<br>FINALLY WORKS<div>😎</div></div>
+        <div class="meme" onclick="openMeme('YOU CHANGED ONE THING')">YOU CHANGED<br>ONE THING<div>💀</div></div>
+        <div class="meme" onclick="openMeme('WHERE IS THAT CHECKPOINT?')">WHERE IS THAT<br>CHECKPOINT?<div>🗿</div></div>
+      </div>
+    </section>
+
+    <section class="final-banner" onclick="openEpisode('demo')">
+      <p>THE SEASON FINALE</p>
+      <h2>AI GIT: THE DEMO</h2>
+      <span>▶ Enter the demo</span>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
+
+  <div id="toast"></div>
+  <audio id="introSound" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
