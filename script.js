@@ -4,29 +4,29 @@ const enterBtn = document.getElementById("enterBtn");
 const intro = document.getElementById("intro");
 const introSound = document.getElementById("introSound");
 
-enterBtn.addEventListener("click", () => {
+// enterBtn.addEventListener("click", () => {
 
-    // Prevent multiple clicks
-    enterBtn.disabled = true;
+//     // Prevent multiple clicks
+//     enterBtn.disabled = true;
 
-    // Play sound
-    introSound.currentTime = 0;
+//     // Play sound
+//     introSound.currentTime = 0;
 
-    introSound.play().catch(error => {
-        console.log("Audio could not play:", error);
-    });
+//     introSound.play().catch(error => {
+//         console.log("Audio could not play:", error);
+//     });
 
-    // Small delay so the sound starts
-    setTimeout(() => {
-        intro.classList.add("lift");
-    }, 150);
+//     // Small delay so the sound starts
+//     setTimeout(() => {
+//         intro.classList.add("lift");
+//     }, 150);
 
-});
+// });
 
 const episodes={
 problem:{
 kicker:"SEASON 1 · EPISODE 1",
-title:"AI Has Commitment Issues",
+title:"AI is Dumb",
 html:`
 <p class="lead">Your model worked yesterday. You changed something today. Now you have no idea what happened.</p>
 <div class="episode-grid">
@@ -36,9 +36,9 @@ html:`
 <h2>The classic engineering moment</h2><div class="big-meme">"I ONLY CHANGED ONE THING."<small>💀</small></div>`},
 why:{
 kicker:"SEASON 1 · EPISODE 2",
-title:"Why AI Git?",
+title:"Let's be honest...",
 html:`
-<h2>Git solved this for code.</h2><p>Developers can inspect commits, compare changes, branch, merge and return to an earlier state.</p>
+<h2>We already have Git, so why make AI-Git?!</h2><p>Developers can inspect commits, compare changes, branch, merge and return to an earlier state.</p>
 <h2>But AI is more than source code.</h2>
 <div class="episode-grid">
 <div class="info-box"><h3>Model checkpoints</h3><p>Large binary states that evolve during training.</p></div>
@@ -48,8 +48,8 @@ html:`
 </div>
 <h2>The idea</h2><p class="lead">Give AI systems a history — not just a latest version.</p>`},
 checkpoints:{
-kicker:"SEASON 2 · EPISODE 1",
-title:"Meet the Checkpoints",
+kicker:"SEASON 1 · EPISODE 3",
+title:"Fine...tell me about your project",
 html:`
 <p>A checkpoint is a snapshot of an AI model at a particular point in its evolution.</p>
 <div class="checkpoint-flow">
@@ -60,8 +60,8 @@ html:`
 </div>
 <h2>What AI Git adds</h2><div class="info-box"><p>Instead of treating every checkpoint as an isolated file, AI Git gives you a way to reason about the evolution between checkpoints.</p></div>`},
 architecture:{
-kicker:"SEASON 2 · EPISODE 2",
-title:"Under the Hood",
+kicker:"SEASON 1 · EPISODE 4",
+title:"Nobody cares how Git Works",
 html:`
 <p>Replace these placeholder nodes with your team's exact architecture. The page is deliberately built so the diagram can become interactive.</p>
 <div class="architecture">
@@ -73,7 +73,7 @@ html:`
 </div>
 <h2>Make this your real architecture</h2><p>Use the architecture card on the homepage as the entry point to explain data flow, storage, comparison and retrieval.</p>`},
 code:{
-kicker:"SEASON 2 · EPISODE 3",
+kicker:"SEASON 1 · EPISODE 5",
 title:"How We Made It",
 html:`
 <p>This is a presentation-friendly code viewer. Replace the sample with your real implementation.</p>
@@ -108,37 +108,103 @@ html:`<div class="info-box"><h2>Now show the real thing.</h2><p>This section is 
 };
 
 function openEpisode(id){
-  const e=episodes[id];
-  if(!e)return;
-  modalContent.innerHTML=`<div class="episode"><div class="episode-kicker">${e.kicker}</div><h1>${e.title}</h1>${e.html}</div>`;
-  modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+
+    const e = episodes[id];
+
+    if(!e) return;
+
+    modalContent.innerHTML = `
+        <div class="episode">
+
+            <div class="episode-kicker">
+                ${e.kicker}
+            </div>
+
+            <h1>${e.title}</h1>
+
+            ${e.html}
+
+        </div>
+    `;
+
+    modal.classList.add("open");
+
+    modal.setAttribute("aria-hidden","false");
+
+    document.body.style.overflow = "hidden";
+
 }
-function closeModal(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow="auto"}
-function openMeme(text){
-  modalContent.innerHTML=`<div class="episode"><div class="episode-kicker">BONUS EPISODE</div><h1>Because We Suffered</h1><div class="big-meme">${text}<small>💀</small></div></div>`;
-  modal.classList.add("open");document.body.style.overflow="hidden";
+function closeModal(){
+
+    modal.classList.remove("open");
+
+    modal.setAttribute("aria-hidden","true");
+
+    document.body.style.overflow = "auto";
+
+    // Always return to homepage
+    document.body.classList.remove("presentation-mode");
+
 }
 function goHome(){window.scrollTo({top:0,behavior:"smooth"});closeModal()}
 function startPresentation(){
-  document.body.classList.add("presentation-mode");
-  openEpisode("problem");
-  toast("Presentation mode — press ESC to exit");
+
+    document.body.classList.add("presentation-mode");
+
+    openEpisode("problem");
+
+    toast("Presentation mode — press ESC to exit");
+
 }
 function toast(message){
   const t=document.getElementById("toast");t.textContent=message;t.classList.add("show");
   setTimeout(()=>t.classList.remove("show"),2500);
 }
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){
-    document.body.classList.remove("presentation-mode");
-    closeModal();
-  }
-  if(e.key==="ArrowRight" && modal.classList.contains("open")){
-    const ids=["problem","why","checkpoints","architecture","code","progress","demo"];
-    const title=modalContent.querySelector("h1")?.textContent;
-    const current=ids.find(id=>episodes[id].title===title);
-    const next=ids[(ids.indexOf(current)+1)%ids.length];openEpisode(next);
-  }
+document.addEventListener("keydown", e => {
+
+    if(e.key === "Escape"){
+
+        closeModal();
+
+    }
+
+
+    if(
+        e.key === "ArrowRight" &&
+        modal.classList.contains("open")
+    ){
+
+        const ids = [
+            "problem",
+            "why",
+            "checkpoints",
+            "architecture",
+            "code",
+            "progress",
+            "demo"
+        ];
+
+        const title =
+            modalContent.querySelector("h1")?.textContent;
+
+        const current =
+            ids.find(
+                id => episodes[id].title === title
+            );
+
+        const currentIndex =
+            ids.indexOf(current);
+
+        const next =
+            ids[
+                (currentIndex + 1) %
+                ids.length
+            ];
+
+        openEpisode(next);
+
+    }
+
 });
 window.addEventListener("scroll",()=>document.querySelector(".navbar").classList.toggle("scrolled",scrollY>40));
 modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
