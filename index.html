@@ -1,16 +1,27 @@
-6<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Git — The Evolution of AI</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div id="intro" class="intro">
-    <div class="intro-logo">AI<span>GIT</span></div>
-    <div class="intro-sub">THE EVOLUTION OF AI</div>
-  </div>
+
+        <div class="intro-logo">
+            AI<span>GIT</span>
+        </div>
+
+        <div class="intro-sub">
+            THE EVOLUTION OF AI
+        </div>
+
+        <button id="enterBtn" class="enter-btn">
+            ENTER AI GIT
+        </button>
+
+    </div>
 
   <header class="navbar">
     <div class="brand" onclick="goHome()">AI<span>GIT</span></div>
@@ -29,31 +40,30 @@
       <div class="hero-content">
         <p class="eyebrow">AN ORIGINAL ENGINEERING STORY</p>
         <h1>AI GIT</h1>
-        <h2>Because your AI deserves a history.</h2>
+        <h2>Because your AI deserves a history</h2>
         <p class="hero-copy">
-          A version-control experience built around AI checkpoints —
+          A version-control experience built around AI & ML checkpoints, to
           track what changed, compare versions, reproduce experiments,
           and understand your model's evolution.
         </p>
         <div class="hero-actions">
           <button class="primary" onclick="startPresentation()">▶ Play Presentation</button>
-          <button class="secondary" onclick="openEpisode('problem')">More Info</button>
         </div>
       </div>
       <div class="hero-checkpoints">
-        <div class="checkpoint c1">v1<br><small>Works.</small></div>
+        <div class="checkpoint c1">v1<br><small>Works</small></div>
         <div class="line"></div>
-        <div class="checkpoint c2">v2<br><small>Better.</small></div>
+        <div class="checkpoint c2">v2<br><small>Better</small></div>
         <div class="line"></div>
-        <div class="checkpoint c3">v3<br><small>WHY?!</small></div>
+        <div class="checkpoint c3">v3<br><small>What da hell?!</small></div>
         <div class="line"></div>
-        <div class="checkpoint c4">v4<br><small>Fixed.</small></div>
+        <div class="checkpoint c4">v4<br><small>Fixed</small></div>
       </div>
     </section>
 
     <section class="continue">
       <div class="section-heading">
-        <h2>Continue Watching</h2>
+        <h2>Continue Watching For AI-GIT</h2>
         <span>AI Git — The Story So Far</span>
       </div>
       <div class="cards">
@@ -131,8 +141,13 @@
   </div>
 
   <div id="toast"></div>
-  <audio id="introSound" preload="auto"></audio>
+   <audio id="introSound" preload="auto">
+        <source
+            src="assets/nouveau-jingle-netflix.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

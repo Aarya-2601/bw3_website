@@ -1,5 +1,27 @@
 const modal=document.getElementById("modal");
 const modalContent=document.getElementById("modalContent");
+const enterBtn = document.getElementById("enterBtn");
+const intro = document.getElementById("intro");
+const introSound = document.getElementById("introSound");
+
+enterBtn.addEventListener("click", () => {
+
+    // Prevent multiple clicks
+    enterBtn.disabled = true;
+
+    // Play sound
+    introSound.currentTime = 0;
+
+    introSound.play().catch(error => {
+        console.log("Audio could not play:", error);
+    });
+
+    // Small delay so the sound starts
+    setTimeout(() => {
+        intro.classList.add("lift");
+    }, 150);
+
+});
 
 const episodes={
 problem:{
