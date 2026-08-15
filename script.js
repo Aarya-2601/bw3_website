@@ -50,7 +50,7 @@ html:`
 </div>
 </div>
 <h2>That one bro after he's caught in Git Blame</h2><div>
-<img 
+<img    class=".big-meme"
         src="assets/i-didnt-do-fucking-shit.gif"
         alt="Git blame meme"
         class="meme-gif"
@@ -59,7 +59,7 @@ why:{
 kicker:"SEASON 1 · EPISODE 2",
 title:"Let's be honest...",
 html:`
-<h2>There's nothing special about AI-Git</h2>
+<h2>everyone prefers Git LFS & DVC</h2>
 <div class="episode-grid">
 <div class="info-box"><h3>Git LFS</h3>
     <p>Works on the familiar Git architecture
@@ -78,23 +78,30 @@ html:`
     <img src="assets/dvc.png"></div>
 </div>
 <h2>The idea</h2><p class="lead">Combine everything into one so you don't have to jump between things.</p>
-<img src="assets/trampoline-fitness.gif" alt="Jumping Jhapak">`},
+<img class=",big-meme" src="assets/trampoline-fitness.gif" alt="Jumping Jhapak" height="400px">`},
 checkpoints:{
 kicker:"SEASON 2 · EPISODE 1",
-title:"Fine...tell me about your project",
+title:"Fine...",
 html:`
-<p>A checkpoint is a snapshot of an AI model at a particular point in its evolution.</p>
-<div class="checkpoint-flow">
-<div class="cp"><strong>v1</strong>Initial model</div><div class="arrow">→</div>
-<div class="cp"><strong>v2</strong>After training</div><div class="arrow">→</div>
-<div class="cp diff"><strong>v3</strong>Something changed</div><div class="arrow">→</div>
-<div class="cp"><strong>v4</strong>Fixed model</div>
-</div>
-<h2>What AI Git adds</h2><div class="info-box"><p>Instead of treating every checkpoint as an isolated file, AI Git gives you a way to reason about the evolution between checkpoints.</p></div>`},
+<h2>but what will you do?</h2>
+<div class=".checkpoint-flow">
+<div class="cp"><strong>Double Hashing</strong><br><img src="assets/double_hashing.gif" alt="Double Hashing" height=200px><br><br>1. Handles hash collision<br>2. XXHash + SHA-256<br>3. OpenSSL's products<br>4. Faster lookups</div>
+<div class="cp diff"><strong>Deduplication</strong><br><img src="assets/fastCDC.gif" width=400px><br><br>1. Same content but different file name<br>2. Fixed-size chunking vs CDC (CAS)<br>3.Saves redundancy of space<br></div>
+<div class="cp"><strong>Chunking</strong><br><img src="assets/deduplication.png"><br>FastCDC</div>
+<div class="cp diff"><strong>Double Data-tracking</strong><br><b>MinIO:</b> the "dumb" database<br>helps in object-style storage<br><br><b>PostgreSQL:</b> relational database<br>helps in storing repository structure</div>
+<div class="cp"><strong>Building our own API</strong><br>1. What is an API?<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone</div>
+<div class="cp diff"><strong>Website</strong><br>GitHub-like Interface</div>
+`},
 architecture:{
 kicker:"SEASON 2 · EPISODE 2",
 title:"Nobody cares how Git Works",
 html:`
+<div class="checkpoint-flow">
+<div class="cp"><strong>Double Hashing<br>OpenSSL</strong>Initial model</div><div class="arrow">→</div>
+<div class="cp"><strong>Deduplication</strong>After training</div><div class="arrow">→</div>
+<div class="cp diff"><strong>Chunking using FastCDC</strong>Something changed</div><div class="arrow">→</div>
+<div class="cp"><strong>v4</strong>Fixed model</div>
+</div>
 <p>Replace these placeholder nodes with your team's exact architecture. The page is deliberately built so the diagram can become interactive.</p>
 <div class="architecture">
 <div class="arch-row"><div class="arch-node">AI / User</div><div class="arch-arrow">→</div><div class="arch-node">AI Git API</div></div>

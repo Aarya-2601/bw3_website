@@ -24,6 +24,11 @@ button{font:inherit;color:inherit;border:0;cursor:pointer}
 .code-window{background:#0d0d0d;border:1px solid #333;border-radius:8px;overflow:hidden;margin-top:25px}.code-top{padding:10px 14px;background:#1a1a1a;color:#777}.code-window pre{padding:25px;overflow:auto;color:#ddd;line-height:1.6}.code-window .keyword{color:#ff6b75}.code-window .string{color:#9bd37b}
 .timeline{border-left:2px solid #333;margin:35px 0 0 15px;padding-left:35px}.event{position:relative;padding:10px 0 35px}.event:before{content:"";position:absolute;left:-43px;top:15px;width:14px;height:14px;background:var(--red);border-radius:50%;box-shadow:0 0 15px #e50914}.event h3{margin:0 0 5px}.event span{color:#777}
 .big-meme{min-height:500px;background:#151515;border-radius:10px;display:grid;place-content:center;text-align:center;font-size:clamp(35px,6vw,80px);font-weight:900}.big-meme small{display:block;font-size:70px;margin-top:30px}
+.slide3{display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    grid-auto-flow: column;}
 /* .intro{
     position:fixed;
     inset:0;
