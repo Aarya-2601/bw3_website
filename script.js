@@ -59,15 +59,26 @@ why:{
 kicker:"SEASON 1 · EPISODE 2",
 title:"Let's be honest...",
 html:`
-<h2>We already have Git, so why make AI-Git?!</h2><p>Developers can inspect commits, compare changes, branch, merge and return to an earlier state.</p>
-<h2>But AI is more than source code.</h2>
+<h2>There's nothing special about AI-Git</h2>
 <div class="episode-grid">
-<div class="info-box"><h3>Model checkpoints</h3><p>Large binary states that evolve during training.</p></div>
-<div class="info-box"><h3>Experiments</h3><p>Training configurations, metrics and model states change together.</p></div>
-<div class="info-box"><h3>Reproducibility</h3><p>You need to know exactly which state produced a result.</p></div>
-<div class="info-box"><h3>Comparison</h3><p>AI Git focuses on understanding checkpoint-to-checkpoint evolution.</p></div>
+<div class="info-box"><h3>Git LFS</h3>
+    <p>Works on the familiar Git architecture
+    <br>Points to large files, and saves text files as they are
+    <br>Opaque objects = zero deduplication
+    <br><b>Takes a tonne of money for 5GB storage</b>
+    <br><b>Hates to see us coming</b></p>
+    <img src="assets/gitlfs.png" alt="Git LFS" style="height: 325px"></div>
+<div class="info-box"><h3>DVC</h3>
+    <p>Splits workflow
+    <br>Have to run both git and DVC commands
+    <br>Bottlenecks
+    <br>No deduplication=Local cache bloat
+    <br><b>Also hates to see us coming</b>
+    </p>
+    <img src="assets/dvc.png"></div>
 </div>
-<h2>The idea</h2><p class="lead">Give AI systems a history — not just a latest version.</p>`},
+<h2>The idea</h2><p class="lead">Combine everything into one so you don't have to jump between things.</p>
+<img src="assets/trampoline-fitness.gif" alt="Jumping Jhapak">`},
 checkpoints:{
 kicker:"SEASON 2 · EPISODE 1",
 title:"Fine...tell me about your project",
