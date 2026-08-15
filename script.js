@@ -38,7 +38,7 @@ html:`
 <img src="assets/money.jpg" alt="money" class="episode-image">
 </div>
 <div class="info-box"><h2>Our problem</h2>
-<p>1. Model checkpoints are stored in binary.
+<p>1. Model checkpoints contain large collections of tensor weights..
 <br>2. What's a checkpoint?
 <br>3. When something changes... it gets triggered
 <img src="assets/matrix.png" alt="Matrix" class="episode-image">
