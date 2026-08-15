@@ -123,3 +123,21 @@ button{font:inherit;color:inherit;border:0;cursor:pointer}
 } */
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @media(max-width:900px){.navbar nav{display:none}.hero-checkpoints{display:none}.cards{grid-template-columns:repeat(2,1fr)}.wide-cards,.meme-grid,.episode-grid{grid-template-columns:1fr}.journey-strip{overflow:auto;justify-content:flex-start;gap:20px}.journey-strip i{display:none}.hero{min-height:90vh}.hero h1{letter-spacing:-4px}}
+.episode-image{
+    display:block;
+
+    width:100%;
+    max-width:700px;
+
+    height:auto;
+
+    margin:30px auto 0;
+
+    border-radius:10px;
+
+    object-fit:contain;
+
+    border:1px solid #333;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.5);
+}

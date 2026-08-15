@@ -26,14 +26,35 @@ const introSound = document.getElementById("introSound");
 const episodes={
 problem:{
 kicker:"SEASON 1 · EPISODE 1",
-title:"AI is Dumb",
+title:"Artificial Intelligence",
 html:`
-<p class="lead">Your model worked yesterday. You changed something today. Now you have no idea what happened.</p>
+<p class="lead">is dumb...</p>
 <div class="episode-grid">
-<div class="info-box"><h2>The problem</h2><p>AI development creates huge numbers of checkpoints, experiments, datasets and configurations. The latest checkpoint tells you where you are — not how you got there.</p></div>
-<div class="info-box"><h2>The question</h2><p><strong>What changed between these two AI states?</strong></p><p>And if the new version is worse, can we reliably understand why and return to the old state?</p></div>
+<div class="info-box"><h2>Your problem</h2><p>1. There's a lot of money in the field of AI today
+<br>2. You want to make A LOT OF money in your lives
+<br>3. You cannot earn easily because AI & ML models, and their datasets are hard to store
+<br><b>4. We wanna make you money
+</p>
+<img src="assets/money.jpg" alt="money" class="episode-image">
 </div>
-<h2>The classic engineering moment</h2><div class="big-meme">"I ONLY CHANGED ONE THING."<small>💀</small></div>`},
+<div class="info-box"><h2>Our problem</h2>
+<p>1. Model checkpoints are stored in binary.
+<br>2. What's a checkpoint?
+<br>3. When something changes... it gets triggered
+<img src="assets/matrix.png" alt="Matrix" class="episode-image">
+<br>4. It gets stored from scratch again
+<br>5. It's too big...
+<br>6. Cannot revert, cause we are not in the picture yet!
+<br><b>7. We wanna make you money
+</p>
+</div>
+</div>
+<h2>That one bro after he's caught in Git Blame</h2><div>
+<img 
+        src="assets/i-didnt-do-fucking-shit.gif"
+        alt="Git blame meme"
+        class="meme-gif"
+    ></div>`},
 why:{
 kicker:"SEASON 1 · EPISODE 2",
 title:"Let's be honest...",
@@ -48,7 +69,7 @@ html:`
 </div>
 <h2>The idea</h2><p class="lead">Give AI systems a history — not just a latest version.</p>`},
 checkpoints:{
-kicker:"SEASON 1 · EPISODE 3",
+kicker:"SEASON 2 · EPISODE 1",
 title:"Fine...tell me about your project",
 html:`
 <p>A checkpoint is a snapshot of an AI model at a particular point in its evolution.</p>
@@ -60,7 +81,7 @@ html:`
 </div>
 <h2>What AI Git adds</h2><div class="info-box"><p>Instead of treating every checkpoint as an isolated file, AI Git gives you a way to reason about the evolution between checkpoints.</p></div>`},
 architecture:{
-kicker:"SEASON 1 · EPISODE 4",
+kicker:"SEASON 2 · EPISODE 2",
 title:"Nobody cares how Git Works",
 html:`
 <p>Replace these placeholder nodes with your team's exact architecture. The page is deliberately built so the diagram can become interactive.</p>
@@ -73,7 +94,7 @@ html:`
 </div>
 <h2>Make this your real architecture</h2><p>Use the architecture card on the homepage as the entry point to explain data flow, storage, comparison and retrieval.</p>`},
 code:{
-kicker:"SEASON 1 · EPISODE 5",
+kicker:"SEASON 2 · EPISODE 3",
 title:"How We Made It",
 html:`
 <p>This is a presentation-friendly code viewer. Replace the sample with your real implementation.</p>
@@ -91,7 +112,7 @@ html:`
     <span class="keyword">return</span> changes</code></pre></div>`},
 progress:{
 kicker:"SEASON 3 · OUR JOURNEY",
-title:"Previously on AI Git...",
+title:"We did what we had to do...",
 html:`
 <p>Turn your actual project progress into a story. Replace the dates and milestones below with your real work.</p>
 <div class="timeline">
