@@ -173,7 +173,7 @@ memes:{
 
     html:`
 
-<h2>choose cooler mentees😎</h2>
+<h2>chose cooler mentees😎</h2>
 
 
 <h2>Display of our creativity</h2>
@@ -475,61 +475,56 @@ architecture:{
 <div class="checkpoint-flow">
 
 
-<div class="cp">
+<a href="https://en.wikipedia.org/wiki/Content-addressable_storage" target="_blank" class="cp">
 
 <strong>Content Addressing</strong>
 
 SHA-256
-
-</div>
-
-
-<div class="arrow">→</div>
+</a>
 
 
-<div class="cp">
+<div class="right-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/Content-addressable_storage" target="_blank" class="cp">
 
 <strong>Whole-File CAS</strong>
 
 Store & retrieve
-
-</div>
-
-
-<div class="arrow">→</div>
+</a>
 
 
-<div class="cp">
+<div class="right-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/Data_deduplication" target="_blank" class="cp">
 
 <strong>Deduplication</strong>
 
 Same content → same object
-
-</div>
-
-
-<div class="arrow">→</div>
+</a>
 
 
-<div class="cp">
+<div class="right-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/Cloud_storage" target="_blank" class="cp">
 
 <strong>Remote CAS</strong>
 
 Push / Pull / Clone
-
-</div>
-
-
-<div class="arrow">→</div>
+</a>
 
 
-<div class="cp diff">
+<div class="right-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/Data_deduplication#Chunking" target="_blank" class="cp diff">
 
 <strong>Chunk-Level CAS</strong>
 
 FastCDC · Next
-
-</div>
+</a>
 
 
 </div>
@@ -551,7 +546,7 @@ text-align:center;
 >
 
 
-<div
+<a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank"
 class="arch-node"
 style="
 width:260px;
@@ -560,24 +555,13 @@ margin:0 auto;
 >
 
 <strong>AI-Git CLI</strong>
-
-</div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
+</a>
 
 
-<div
+<div class="down-arrow"></div>
+
+
+<a href="https://git-scm.com/doc" target="_blank"
 class="arch-node"
 style="
 width:260px;
@@ -586,20 +570,15 @@ margin:0 auto;
 >
 
 <strong>Git / VCS Layer</strong>
+</a>
 
-</div>
 
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
+<div class="fork-container">
+   <div class="fork-stem"></div>
+   <div class="fork-arms" style="width: 300px;">
+       <div class="fork-arm"></div>
+       <div class="fork-arm"></div>
+   </div>
 </div>
 
 
@@ -608,13 +587,15 @@ style="
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
-align-items:center;
+align-items:start;
 justify-items:center;
 "
 >
 
 
-<div
+<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+
+<a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
@@ -632,79 +613,39 @@ color:#888;
 Blob / Tree / Commit
 
 </small>
+</a>
 
-</div>
+<div class="down-arrow"></div>
 
-
-<div
+<a href="https://en.wikipedia.org/wiki/Data_storage" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
 
-<strong>AI-Git CAS</strong>
-
-</div>
-
-
-</div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
-
-
-<div
-class="arch-node"
-style="
-width:260px;
-margin:0 auto;
-"
->
-
 <strong>StorageManager</strong>
+</a>
 
+<div class="fork-container">
+   <div class="fork-stem"></div>
+   <div class="fork-arms" style="width: calc(50% + 7.5px);">
+       <div class="fork-arm"></div>
+       <div class="fork-arm"></div>
+   </div>
 </div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
-
 
 <div
 style="
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:start;
-justify-items:center;
+gap:15px;
+width: 100%;
 "
 >
 
-
-<div>
-
-
-<div
+<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+<a href="https://en.wikipedia.org/wiki/Object_storage" target="_blank"
 class="arch-node"
-style="width:260px;"
+style="width:100%;"
 >
 
 <strong>ObjectStore</strong>
@@ -720,43 +661,23 @@ color:#888;
 Physical CAS objects
 
 </small>
+</a>
 
-</div>
+<div class="down-arrow"></div>
 
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
-
-
-<div
+<a href="https://en.wikipedia.org/wiki/Content-addressable_storage" target="_blank"
 class="arch-node"
-style="width:260px;"
+style="width:100%;"
 >
 
 <strong>CAS Objects</strong>
-
+</a>
 </div>
 
-
-</div>
-
-
-
-<div>
-
-
-<div
+<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+<a href="https://en.wikipedia.org/wiki/Metadata" target="_blank"
 class="arch-node"
-style="width:260px;"
+style="width:100%;"
 >
 
 <strong>MetadataDB</strong>
@@ -772,38 +693,35 @@ color:#888;
 Object metadata
 
 </small>
+</a>
 
-</div>
+<div class="down-arrow"></div>
 
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
+<a href="https://www.sqlite.org/docs.html" target="_blank"
+class="arch-node"
+style="width:100%;"
 >
 
-↓
+<strong>SQLite</strong>
+</a>
+</div>
+
+</div>
 
 </div>
 
 
-<div
+<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+<a href="https://en.wikipedia.org/wiki/Content-addressable_storage" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
 
-<strong>SQLite</strong>
-
+<strong>AI-Git CAS</strong>
+</a>
 </div>
 
-
 </div>
-
-
-</div>
-
 
 </div>
 
@@ -827,7 +745,7 @@ text-align:center;
 >
 
 
-<div
+<a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank"
 class="arch-node"
 style="
 width:260px;
@@ -836,24 +754,13 @@ margin:0 auto;
 >
 
 <strong>AI-Git CLI</strong>
-
-</div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
+</a>
 
 
-<div
+<div class="down-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/Data_storage" target="_blank"
 class="arch-node"
 style="
 width:260px;
@@ -862,20 +769,15 @@ margin:0 auto;
 >
 
 <strong>StorageManager</strong>
+</a>
 
-</div>
 
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
+<div class="fork-container">
+   <div class="fork-stem"></div>
+   <div class="fork-arms" style="width: 300px;">
+       <div class="fork-arm"></div>
+       <div class="fork-arm"></div>
+   </div>
 </div>
 
 
@@ -893,53 +795,31 @@ justify-items:center;
 <div>
 
 
-<div
+<a href="https://en.wikipedia.org/wiki/Content-addressable_storage" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
 
 <strong>Local CAS</strong>
-
-</div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
+</a>
 
 
-<div
+<div class="down-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/Object_storage" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
 
 <strong>ObjectStore</strong>
-
-</div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
+</a>
 
 
-<div
+<div class="down-arrow"></div>
+
+
+<a href="https://www.sqlite.org/docs.html" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
@@ -957,8 +837,7 @@ color:#888;
 Local metadata
 
 </small>
-
-</div>
+</a>
 
 
 </div>
@@ -968,72 +847,45 @@ Local metadata
 <div>
 
 
-<div
+<a href="https://en.wikipedia.org/wiki/Cloud_storage" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
 
 <strong>Remote CAS</strong>
-
-</div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
+</a>
 
 
-<div
+<div class="down-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/API" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
 
 <strong>Client API</strong>
-
-</div>
-
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
-</div>
+</a>
 
 
-<div
+<div class="down-arrow"></div>
+
+
+<a href="https://en.wikipedia.org/wiki/Server_(computing)" target="_blank"
 class="arch-node"
 style="width:260px;"
 >
 
 <strong>Server</strong>
+</a>
 
-</div>
 
-
-<div
-style="
-font-size:25px;
-color:#777;
-margin:12px;
-"
->
-
-↓
-
+<div class="fork-container">
+   <div class="fork-stem"></div>
+   <div class="fork-arms" style="width: calc(50% + 7.5px);">
+       <div class="fork-arm"></div>
+       <div class="fork-arm"></div>
+   </div>
 </div>
 
 
@@ -1046,7 +898,7 @@ gap:15px;
 >
 
 
-<div
+<a href="https://www.postgresql.org/docs/" target="_blank"
 class="arch-node"
 style="width:100%;"
 >
@@ -1064,11 +916,10 @@ color:#888;
 Metadata
 
 </small>
+</a>
 
-</div>
 
-
-<div
+<a href="https://min.io/docs/minio/linux/index.html" target="_blank"
 class="arch-node"
 style="width:100%;"
 >
@@ -1086,8 +937,7 @@ color:#888;
 Object storage
 
 </small>
-
-</div>
+</a>
 
 
 </div>
