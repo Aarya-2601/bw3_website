@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Git — The Evolution of AI</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Git — The Evolution of AI</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- <div id="intro" class="intro">
+
+    <!-- INTRO -->
+
+    <div id="intro" class="intro">
 
         <div class="intro-logo">
             AI<span>GIT</span>
@@ -21,134 +28,794 @@
             ENTER AI GIT
         </button>
 
-    </div> -->
+    </div>
 
-  <header class="navbar">
-    <div class="brand" onclick="goHome()">AI<span>GIT</span></div>
-    <nav>
-      <button onclick="goHome()">Home</button>
-      <button onclick="openEpisode('problem')">The Problem</button>
-      <button onclick="openEpisode('why')">Why AI Git</button>
-      <button onclick="openEpisode('progress')">Workflow</button>
-      <button onclick="openEpisode('architecture')">Architecture</button>
-    </nav>
-  </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">AN ORIGINAL ENGINEERING STORY</p>
-        <h1>AI GIT</h1>
-        <h2>Because your AI deserves a history</h2>
-        <p class="hero-copy">
-          A Git-like version-control system for AI & ML artifacts, combining content-addressed storage, deduplication, and version tracking for large model checkpoints.
-        </p>
-        <div class="hero-actions">
-          <button class="primary" onclick="startPresentation()">▶ Play Presentation</button>
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="brand" onclick="goHome()">
+            AI<span>GIT</span>
         </div>
-      </div>
-      <div class="hero-checkpoints">
-        <div class="checkpoint c1">v1<br><small>Works</small></div>
-        <div class="line"></div>
-        <div class="checkpoint c2">v2<br><small>Better</small></div>
-        <div class="line"></div>
-        <div class="checkpoint c3">v3<br><small>What da hell?!</small></div>
-        <div class="line"></div>
-        <div class="checkpoint c4">v4<br><small>Fixed</small></div>
-      </div>
-    </section>
 
-    <section class="continue">
-      <div class="section-heading">
-        <h2>Continue Watching For AI-GIT</h2>
-        <span>AI Git — The Story So Far</span>
-      </div>
-      <div class="cards">
-        <article class="card featured" onclick="openEpisode('problem')">
-          <div class="card-art art-red">01</div>
-          <div class="card-info"><b>Artificial Intelligence</b><small>Episode 1 · The What</small></div>
-        </article>
-        <article class="card" onclick="openEpisode('why')">
-          <div class="card-art art-purple">02</div>
-          <div class="card-info"><b>Let's be honest...</b><small>Episode 2 · The Why</small></div>
-        </article>
-        <article class="card" onclick="openEpisode('checkpoints')">
-          <div class="card-art art-blue">03</div>
-          <div class="card-info"><b>Fine...</b><small>Episode 3 · Core Idea</small></div>
-        </article>
-        <article class="card" onclick="openEpisode('architecture')">
-          <div class="card-art art-green">04</div>
-          <div class="card-info"><b>Nobody cares how it works</b><small>Episode 4 · Architecture</small></div>
-        </article>
-        <article class="card" onclick="openEpisode('code')">
-          <div class="card-art art-orange">05</div>
-          <div class="card-info"><b>The part that we don't understand</b><small>Episode 5 · Code</small></div>
-        </article>
-      </div>
-    </section>
+        <nav>
 
-    <section class="row">
-      <div class="section-heading"><h2>Season 1 — The Problem</h2><span>Previously on AI...</span></div>
-      <div class="wide-cards">
-        <article class="wide-card" onclick="openEpisode('problem')"><div class="poster">Artificial Intelligence</div><h3>Ep. 1 · The What</h3><p>is dumb...</p></article>
-        <article class="wide-card" onclick="openEpisode('why')"><div class="poster poster-2">Let's be honest...</div><h3>Ep. 2 · The Why</h3><p>Why make AI-Git?</p></article>
-        <article class="wide-card" onclick="openEpisode('memes')"><div class="poster poster-3">Because Our Cool Mentors</div><h3>Bonus · The Memes</h3><p>choose cooler mentees&#128526;</p></article>
-      </div>
-    </section>
+            <button onclick="goHome()">
+                Home
+            </button>
 
-    <section class="row">
-      <div class="section-heading"><h2>Season 2 — How It Works</h2><span>Enter the system</span></div>
-      <div class="wide-cards">
-        <article class="wide-card" onclick="openEpisode('checkpoints')"><div class="poster poster-4">Fine...</div><h3>Ep. 1 · The How</h3><p>tell me about your project</p></article>
-        <article class="wide-card" onclick="openEpisode('architecture')"><div class="poster poster-5">Nobody cares how it works</div><h3>Ep. 2 · Architecture</h3><p>Things only the LYs care about</p></article>
-        <article class="wide-card" onclick="openEpisode('code')"><div class="poster poster-6">The part that we don't understand</div><h3>Ep. 3 · Code</h3><p>Thanks to ChatGPT, we know we don't</p></article>
-      </div>
-    </section>
+            <button onclick="openEpisode('problem')">
+                The Problem
+            </button>
 
-    <section class="row">
-      <div class="section-heading"><h2>Season 3 — Workflow</h2><span>Rome was not built in a day</span></div>
-      <div class="journey-strip" onclick="openEpisode('progress')">
-        <div><strong>DAY 01</strong><span>We got selected<br>(yay&#127881)<br>Read each other's proposal<br>(and it was totally different)&#128561;</span></div>
-        <i>→</i><div><strong>DAY 04</strong><span>Conflicts&#9876;&#xFE0F;<br>Something our mentors <br>would probably hate <br>to see&#128556;</span></div>
-        <i>→</i><div><strong>DAY 05</strong><span>We agreed on an <br>idea&#129730;<br>(Mentors told us)</span></div>
-        <i>→</i><div><strong>DAY 12</strong><span>Wrote core and basic <br>local commands&#129309;<br>(struggled with filesystem)<br>played Dhurandhar song&#128526;</span></div>
-        <i>→</i><div><strong>DAY 26</strong><span>Sped up our pace<br>completed the clone<br>Integrated CLI&#127939;&#8205;&#9792;&#65039;&#127939;&#8205;&#9792;&#65039;</span></div>
-        <i>→</i><div><strong>PRESENT DAY</strong><span>MinIO & PostgreSQL storage<br>Deduplication<br>Remote commands<br><s>(Tryna Fix all the inter<br>connection but it's so bad)</s></span></div>
-        <i>→</i><div><strong>AFTER 10 YEARS</strong><span>Complete end-to<br>-end codes<br>Remote CAS<br>API testing via postman<br>Full CLI integration<br>Chunking</span></div>
-        <i>→</i><div><strong>IN OUR BATCH REUNION</strong><span>Test everything and <br>compute their <br>efficiency as <br>opposed to <br>GitLFS and DVC</span></div>
-        <i>→</i><div><strong>ON OUR 80TH B'DAY</strong><span>Final<br>working<br>system<br>Time<br>to<br>make<br>money&#128176;</span></div>
-      </div>
-    </section>
+            <button onclick="openEpisode('why')">
+                Why AI Git
+            </button>
 
-    <section class="row">
-      <div class="section-heading"><h2><s>Because We Suffered</s>    Because we Enjoyed</h2></div>
-      <div class="meme-grid">
-        <div class="meme">WHEN SOMEONE TELLS ME<BR>AI-GIT IS THE SAME AS GIT<div><img src="assets/kill.png" height="300px"></div></div>
-        <div class="meme">US AFTER MAKING<BR>AI-GIT<div><IMG SRC="assets/paisa_phek.png" height="300px"></div></div>
-        <div class="meme">LYs ON EACH LINE OF CODE<div><img src="assets/plsexpln.png" height="300px"></div></div>
-      </div>
-    </section>
+            <button onclick="openEpisode('progress')">
+                Workflow
+            </button>
 
-    <section class="final-banner" onclick="openEpisode('demo')">
-      <p>THE SEASON FINALE</p>
-      <h2>AI GIT: THE DEMO</h2>
-      <span>▶ Enter the demo</span>
-    </section>
-  </main>
+            <button onclick="openEpisode('architecture')">
+                Architecture
+            </button>
 
-  <div id="modal" class="modal" aria-hidden="true">
-    <button class="close" onclick="closeModal()">×</button>
-    <div id="modalContent"></div>
-  </div>
+        </nav>
 
-  <div id="toast"></div>
-   <audio id="introSound" preload="auto">
+    </header>
+
+
+    <!-- HOME -->
+
+    <main id="home">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    AN ORIGINAL ENGINEERING STORY
+                </p>
+
+                <h1>AI GIT</h1>
+
+                <h2>
+                    Because your AI deserves a history
+                </h2>
+
+                <p class="hero-copy">
+
+                    A Git-like version-control system for AI & ML artifacts,
+                    combining content-addressed storage, deduplication,
+                    and version tracking for large model checkpoints.
+
+                </p>
+
+                <div class="hero-actions">
+
+                    <button
+                        class="primary"
+                        onclick="startPresentation()"
+                    >
+                        ▶ Play Presentation
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-checkpoints">
+
+                <div class="checkpoint c1">
+                    v1
+                    <br>
+                    <small>Works</small>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="checkpoint c2">
+                    v2
+                    <br>
+                    <small>Better</small>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="checkpoint c3">
+                    v3
+                    <br>
+                    <small>What da hell?!</small>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="checkpoint c4">
+                    v4
+                    <br>
+                    <small>Fixed</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTINUE WATCHING -->
+
+        <section class="continue">
+
+            <div class="section-heading">
+
+                <h2>
+                    Continue Watching For AI-GIT
+                </h2>
+
+                <span>
+                    AI Git — The Story So Far
+                </span>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <article
+                    class="card featured"
+                    onclick="openEpisode('problem')"
+                >
+
+                    <div class="card-art art-red">
+                        01
+                    </div>
+
+                    <div class="card-info">
+
+                        <b>
+                            Artificial Intelligence
+                        </b>
+
+                        <small>
+                            Episode 1 · The What
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    onclick="openEpisode('why')"
+                >
+
+                    <div class="card-art art-purple">
+                        02
+                    </div>
+
+                    <div class="card-info">
+
+                        <b>
+                            Let's be honest...
+                        </b>
+
+                        <small>
+                            Episode 2 · The Why
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    onclick="openEpisode('checkpoints')"
+                >
+
+                    <div class="card-art art-blue">
+                        03
+                    </div>
+
+                    <div class="card-info">
+
+                        <b>
+                            Fine...
+                        </b>
+
+                        <small>
+                            Episode 3 · Core Idea
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    onclick="openEpisode('architecture')"
+                >
+
+                    <div class="card-art art-green">
+                        04
+                    </div>
+
+                    <div class="card-info">
+
+                        <b>
+                            Nobody cares how it works
+                        </b>
+
+                        <small>
+                            Episode 4 · Architecture
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    onclick="openEpisode('code')"
+                >
+
+                    <div class="card-art art-orange">
+                        05
+                    </div>
+
+                    <div class="card-info">
+
+                        <b>
+                            The part that we don't understand
+                        </b>
+
+                        <small>
+                            Episode 5 · Code
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- SEASON 1 -->
+
+        <section class="row">
+
+            <div class="section-heading">
+
+                <h2>
+                    Season 1 — The Problem
+                </h2>
+
+                <span>
+                    Previously on AI...
+                </span>
+
+            </div>
+
+
+            <div class="wide-cards">
+
+
+                <article
+                    class="wide-card"
+                    onclick="openEpisode('problem')"
+                >
+
+                    <div class="poster">
+                        Artificial Intelligence
+                    </div>
+
+                    <h3>
+                        Ep. 1 · The What
+                    </h3>
+
+                    <p>
+                        is dumb...
+                    </p>
+
+                </article>
+
+
+                <article
+                    class="wide-card"
+                    onclick="openEpisode('why')"
+                >
+
+                    <div class="poster poster-2">
+                        Let's be honest...
+                    </div>
+
+                    <h3>
+                        Ep. 2 · The Why
+                    </h3>
+
+                    <p>
+                        Why make AI-Git?
+                    </p>
+
+                </article>
+
+
+                <article
+                    class="wide-card"
+                    onclick="openEpisode('memes')"
+                >
+
+                    <div class="poster poster-3">
+                        Because Our Cool Mentors
+                    </div>
+
+                    <h3>
+                        Bonus · The Memes
+                    </h3>
+
+                    <p>
+                        choose cooler mentees😎
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- SEASON 2 -->
+
+        <section class="row">
+
+            <div class="section-heading">
+
+                <h2>
+                    Season 2 — How It Works
+                </h2>
+
+                <span>
+                    Enter the system
+                </span>
+
+            </div>
+
+
+            <div class="wide-cards">
+
+
+                <article
+                    class="wide-card"
+                    onclick="openEpisode('checkpoints')"
+                >
+
+                    <div class="poster poster-4">
+                        Fine...
+                    </div>
+
+                    <h3>
+                        Ep. 1 · The How
+                    </h3>
+
+                    <p>
+                        tell me about your project
+                    </p>
+
+                </article>
+
+
+                <article
+                    class="wide-card"
+                    onclick="openEpisode('architecture')"
+                >
+
+                    <div class="poster poster-5">
+                        Nobody cares how it works
+                    </div>
+
+                    <h3>
+                        Ep. 2 · Architecture
+                    </h3>
+
+                    <p>
+                        Things only the LYs care about
+                    </p>
+
+                </article>
+
+
+                <article
+                    class="wide-card"
+                    onclick="openEpisode('code')"
+                >
+
+                    <div class="poster poster-6">
+                        The part that we don't understand
+                    </div>
+
+                    <h3>
+                        Ep. 3 · Code
+                    </h3>
+
+                    <p>
+                        Thanks to ChatGPT, we know we don't
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- SEASON 3 -->
+
+        <section class="row">
+
+            <div class="section-heading">
+
+                <h2>
+                    Season 3 — Workflow
+                </h2>
+
+                <span>
+                    Rome was not built in a day
+                </span>
+
+            </div>
+
+
+            <div
+                class="journey-strip"
+                onclick="openEpisode('progress')"
+            >
+
+
+                <div>
+
+                    <strong>DAY 01</strong>
+
+                    <span>
+                        We got selected
+                        <br>
+                        (yay🎉)
+                        <br>
+                        Read each other's proposal
+                        <br>
+                        (and it was totally different)😱
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>DAY 04</strong>
+
+                    <span>
+                        Conflicts⚔️
+                        <br>
+                        Something our mentors
+                        <br>
+                        would probably hate
+                        <br>
+                        to see😬
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>DAY 05</strong>
+
+                    <span>
+                        We agreed on an
+                        <br>
+                        idea🤢
+                        <br>
+                        (Mentors told us)
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>DAY 12</strong>
+
+                    <span>
+                        Wrote core and basic
+                        <br>
+                        local commands🤝
+                        <br>
+                        (struggled with filesystem)
+                        <br>
+                        played Dhurandhar song😎
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>DAY 26</strong>
+
+                    <span>
+                        Sped up our pace
+                        <br>
+                        completed the clone
+                        <br>
+                        Integrated CLI🏃‍♀️🏃‍♀️
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>PRESENT DAY</strong>
+
+                    <span>
+                        MinIO & PostgreSQL storage
+                        <br>
+                        Deduplication
+                        <br>
+                        Remote commands
+                        <br>
+                        <s>
+                            (Tryna Fix all the inter
+                            <br>
+                            connection but it's so bad)
+                        </s>
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>AFTER 10 YEARS</strong>
+
+                    <span>
+                        Complete end-to
+                        <br>
+                        -end codes
+                        <br>
+                        Remote CAS
+                        <br>
+                        API testing via postman
+                        <br>
+                        Full CLI integration
+                        <br>
+                        Chunking
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>IN OUR BATCH REUNION</strong>
+
+                    <span>
+                        Test everything and
+                        <br>
+                        compute their
+                        <br>
+                        efficiency as
+                        <br>
+                        opposed to
+                        <br>
+                        GitLFS and DVC
+                    </span>
+
+                </div>
+
+
+                <i>→</i>
+
+
+                <div>
+
+                    <strong>ON OUR 80TH B'DAY</strong>
+
+                    <span>
+                        Final
+                        <br>
+                        working
+                        <br>
+                        system
+                        <br>
+                        Time
+                        <br>
+                        to
+                        <br>
+                        make
+                        money💰
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- MEMES -->
+
+        <section class="row">
+
+            <div class="section-heading">
+
+                <h2>
+                    <s>Because We Suffered</s>
+                    Because we Enjoyed
+                </h2>
+
+            </div>
+
+
+            <div class="meme-grid">
+
+
+                <div class="meme">
+
+                    WHEN SOMEONE TELLS ME
+                    <br>
+                    AI-GIT IS THE SAME AS GIT
+
+                    <div>
+
+                        <img
+                            src="assets/kill.png"
+                            height="300px"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="meme">
+
+                    US AFTER MAKING
+                    <br>
+                    AI-GIT
+
+                    <div>
+
+                        <img
+                            src="assets/paisa_phek.png"
+                            height="300px"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="meme">
+
+                    LYs ON EACH LINE OF CODE
+
+                    <div>
+
+                        <img
+                            src="assets/plsexpln.png"
+                            height="300px"
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- FINALE -->
+
+        <section
+            class="final-banner"
+            onclick="openEpisode('demo')"
+        >
+
+            <p>
+                THE SEASON FINALE
+            </p>
+
+            <h2>
+                AI GIT: THE DEMO
+            </h2>
+
+            <span>
+                ▶ Enter the demo
+            </span>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- MODAL -->
+
+    <div
+        id="modal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <button
+            class="close"
+            onclick="closeModal()"
+        >
+            ×
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+
+    <div id="toast"></div>
+
+
+    <!-- SOUND -->
+
+    <audio
+        id="introSound"
+        preload="auto"
+    >
+
         <source
             src="assets/nouveau-jingle-netflix.mp3"
             type="audio/mpeg"
         >
+
     </audio>
 
+
     <script src="script.js"></script>
+
 </body>
-</html>
+
+</html>>
