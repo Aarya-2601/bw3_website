@@ -40,24 +40,6 @@ problem:{
 
 <h2>Your problem</h2>
 
-<p>
-
-1. There's a lot of money in the field of AI today
-
-<br>
-
-2. You want to make A LOT OF money in your lives
-
-<br>
-
-3. You cannot earn easily because AI & ML models, and their datasets are hard to store
-
-<br>
-
-<b>4. We wanna make you money</b>
-
-</p>
-
 <img
 src="assets/money.jpg"
 alt="money"
@@ -77,11 +59,12 @@ class="episode-image"
 
 <br>
 
-2. They contain huge collections of tensor weights and other metadata.
+
+2. Train the model, change something, save another checkpoint.
 
 <br>
 
-3. Train the model, change something, save another checkpoint.
+3. Versions pile up, storage gets expensive, and tracking what actually changed is painful.
 
 <br>
 
@@ -91,21 +74,7 @@ alt="Checkpoints"
 class="episode-image"
 >
 
-<br>
 
-4. Now you've got another massive file sitting next to the old one.
-
-<br>
-
-5. It's too big...
-
-<br>
-
-6. Versions pile up, storage gets expensive, and tracking what actually changed is painful.
-
-<br>
-
-<b>7. That's where AI-Git comes in.</b>
 
 </p>
 
@@ -149,27 +118,6 @@ why:{
 
 <h3>Git LFS</h3>
 
-<p>
-
-Works on the familiar Git architecture
-
-<br>
-
-Points to large files, and saves text files as they are
-
-<br>
-
-Opaque objects = zero deduplication
-
-<br>
-
-<b>Takes a tonne of money for 5GB storage</b>
-
-<br>
-
-<b>Hates to see us coming</b>
-
-</p>
 
 <img
 src="assets/gitlfs_new.png"
@@ -184,27 +132,6 @@ style="height:300px"
 
 <h3>DVC</h3>
 
-<p>
-
-Designed specifically for data and ML workflows
-
-<br>
-
-Have to run both git and DVC commands
-
-<br>
-
-Introduces another workflow and another layer to manage
-
-<br>
-
-No deduplication=Local cache bloat
-
-<br>
-
-<b>Also hates to see us coming</b>
-
-</p>
 
 <img src="assets/dvc.png">
 
@@ -442,9 +369,6 @@ src="assets/fastcdc.png"
 height="300px"
 >
 
-<br>
-
-FastCDC
 
 </div>
 
@@ -463,14 +387,6 @@ Double Storage and Metadata
 Local — SQLite:
 
 tracks metadata about objects stored locally.
-
-Object ID, size, type and creation time.
-
-<br><br>
-
-ObjectStore:
-
-stores the actual bytes in the local CAS.
 
 <br><br>
 
@@ -514,9 +430,6 @@ height="300px"
 
 3.Push, Pull and Clone
 
-<br>
-
-4. Remote object transfer
 
 </div>
 
@@ -539,8 +452,6 @@ height="300px"
 
 <br>
 
-GitHub-like Interface
-(image is ai generated)
 
 </div>
 
