@@ -38,14 +38,14 @@ html:`
 <img src="assets/money.jpg" alt="money" class="episode-image">
 </div>
 <div class="info-box"><h2>Our problem</h2>
-<p>1. Model checkpoints contain large collections of tensor weights..
-<br>2. What's a checkpoint?
-<br>3. When something changes... it gets triggered
-<img src="assets/matrix.png" alt="Matrix" class="episode-image">
-<br>4. It gets stored from scratch again
+<p>1. Model checkpoints are snapshots of a model's state.
+<br>2. They contain huge collections of tensor weights and other metadata.
+<br>3. Train the model, change something, save another checkpoint.
+<img src="assets/checkpoints.png" alt="Checkpoints" class="episode-image">
+<br>4. Now you've got another massive file sitting next to the old one.
 <br>5. It's too big...
-<br>6. Cannot revert, cause we are not in the picture yet!
-<br><b>7. We wanna make you money
+<br>6. Versions pile up, storage gets expensive, and tracking what actually changed is painful.
+<br><b>7. That's where AI-Git comes in.
 </p>
 </div>
 </div>
@@ -69,9 +69,9 @@ html:`
     <br><b>Hates to see us coming</b></p>
     <img src="assets/gitlfs.png" alt="Git LFS" style="height: 325px"></div>
 <div class="info-box"><h3>DVC</h3>
-    <p>Splits workflow
+    <p>Designed specifically for data and ML workflows
     <br>Have to run both git and DVC commands
-    <br>Bottlenecks
+    <br>Introduces another workflow and another layer to manage
     <br>No deduplication=Local cache bloat
     <br><b>Also hates to see us coming</b>
     </p>
@@ -85,16 +85,32 @@ title:"Fine...",
 html:`
 <h2>but what will you do?</h2>
 <div class=".checkpoint-flow">
-<div class="cp"><strong>Double Hashing</strong><br><img src="assets/double_hashing.gif" alt="Double Hashing" height=200px><br><br>1. Handles hash collision<br>2. XXHash + SHA-256<br>3. OpenSSL's products<br>4. Faster lookups</div>
-<div class="cp diff"><strong>Deduplication</strong><br><img src="assets/fastCDC.gif" width=400px><br><br>1. Same content but different file name<br>2. Fixed-size chunking vs CDC (CAS)<br>3.Saves redundancy of space<br></div>
+<div class="cp"><strong>Identify files by their content using hashing.</strong><br><img src="assets/double_hashing.gif" alt="Double Hashing" height=200px><br><br>1. Handles hash collision<br>2. XXHash + SHA-256<br>3. OpenSSL's products<br>4. Faster lookups</div>
+<div class="cp diff"><strong>Deduplication</strong><br><br>1. Same content but different file name<br>2. Next step: chunk-level deduplication with FastCDC<br>3.Eventually, only changed chunks need to be stored<br></div>
 <div class="cp"><strong>Chunking</strong><br><img src="assets/deduplication.png"><br>FastCDC</div>
-<div class="cp diff"><strong>Double Data-tracking</strong><br><b>MinIO:</b> the "dumb" database<br>helps in object-style storage<br><br><b>PostgreSQL:</b> relational database<br>helps in storing repository structure</div>
-<div class="cp"><strong>Building our own API</strong><br>1. What is an API?<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone</div>
+<div class="cp diff"><strong>Double Storage and Metadata</strong><br><b>Local — SQLite:</b>
+    tracks metadata about objects stored locally.
+    <br>
+    Object ID, size, type and creation time.
+
+    <br><br>
+
+    <b>ObjectStore:</b>
+    stores the actual bytes in the local CAS.
+
+    <br><br>
+
+    <b>Remote — PostgreSQL + MinIO:</b>
+    PostgreSQL manages centralized metadata,
+    while MinIO stores the actual binary objects.
+
+    <br><br></div>
+<div class="cp"><strong>Building our own API</strong><br>1. Client ↔ server communication<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone <br> 4. Remote object transfer</div>
 <div class="cp diff"><strong>Website</strong><br>GitHub-like Interface</div>
 `},
 architecture:{
 kicker:"SEASON 2 · EPISODE 2",
-title:"Nobody cares how Git Works",
+title:"UNDER THE HOOD",
 html:`
 <div class="checkpoint-flow">
 <div class="cp"><strong>Double Hashing<br>OpenSSL</strong>Initial model</div><div class="arrow">→</div>
@@ -102,7 +118,6 @@ html:`
 <div class="cp diff"><strong>Chunking using FastCDC</strong>Something changed</div><div class="arrow">→</div>
 <div class="cp"><strong>v4</strong>Fixed model</div>
 </div>
-<p>Replace these placeholder nodes with your team's exact architecture. The page is deliberately built so the diagram can become interactive.</p>
 <div class="architecture">
 <div class="arch-row"><div class="arch-node">AI / User</div><div class="arch-arrow">→</div><div class="arch-node">AI Git API</div></div>
 <div class="arch-row" style="margin:25px 0"><div class="arch-arrow">↓</div></div>
@@ -132,11 +147,10 @@ progress:{
 kicker:"SEASON 3 · OUR JOURNEY",
 title:"We did what we had to do...",
 html:`
-<p>Turn your actual project progress into a story. Replace the dates and milestones below with your real work.</p>
-<div class="timeline">
-<div class="event"><h3>DAY 01 · The Idea</h3><span>We identified the problem.</span></div>
-<div class="event"><h3>DAY 07 · First Prototype</h3><span>Core project structure came alive.</span></div>
-<div class="event"><h3>DAY 14 · Checkpoint Storage</h3><span>First working checkpoint pipeline.</span></div>
+
+<div class="event"><h3>DAY 01 · Debated the direction to go ahead. Decided to start with building a normal standalone VCS</h3><span></span></div>
+<div class="event"><h3>DAY 07 · Studied git internals, started implementing commands.</span></div>
+<div class="event"><h3>DAY 14 · Done with implementing init, add, status.</span></div>
 <div class="event"><h3>DAY 21 · Comparison</h3><span>We started exposing what changed.</span></div>
 <div class="event"><h3>DAY 30 · Demo Ready</h3><span>The system became something we could show.</span></div>
 </div>`},
