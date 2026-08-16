@@ -108,24 +108,286 @@ html:`
 <div class="cp"><strong>Building our own API</strong><br><img src= "assets/storage.png" height=300px><br>1. Client ↔ server communication<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone <br> 4. Remote object transfer</div>
 <div class="cp diff"><strong>Website</strong><br><img src= "assets/website1.png" height=300px><br>GitHub-like Interface (image is ai generated)</div>
 `},
-architecture:{
-kicker:"SEASON 2 · EPISODE 2",
-title:"Under the hood",
-html:`
-<div class="checkpoint-flow">
-<div class="cp"><strong>Double Hashing<br>OpenSSL</strong>Initial model</div><div class="arrow">→</div>
-<div class="cp"><strong>Deduplication</strong>After training</div><div class="arrow">→</div>
-<div class="cp diff"><strong>Chunking using FastCDC</strong>Something changed</div><div class="arrow">→</div>
-<div class="cp"><strong>v4</strong>Fixed model</div>
-</div>
-<div class="architecture">
-<div class="arch-row"><div class="arch-node">AI / User</div><div class="arch-arrow">→</div><div class="arch-node">AI Git API</div></div>
-<div class="arch-row" style="margin:25px 0"><div class="arch-arrow">↓</div></div>
-<div class="arch-row"><div class="arch-node">Checkpoint Manager</div><div class="arch-arrow">→</div><div class="arch-node">Diff / Comparison Engine</div><div class="arch-arrow">→</div><div class="arch-node">Metadata</div></div>
-<div class="arch-row" style="margin:25px 0"><div class="arch-arrow">↓</div></div>
-<div class="arch-row"><div class="arch-node">Checkpoint Storage</div></div>
-</div>
-<h2>Make this your real architecture</h2><p>Use the architecture card on the homepage as the entry point to explain data flow, storage, comparison and retrieval.</p>`},
+architecture: {
+    kicker: "SEASON 2 · EPISODE 2",
+    title: "Under the hood",
+
+    html: `
+
+    <h2>How AI-Git evolved</h2>
+
+    <div class="checkpoint-flow">
+        <div class="cp">
+            <strong>Content Addressing</strong>
+            SHA-256
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="cp">
+            <strong>Whole-File CAS</strong>
+            Store & retrieve
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="cp">
+            <strong>Deduplication</strong>
+            Same content → same object
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="cp">
+            <strong>Remote CAS</strong>
+            Push / Pull / Clone
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="cp diff">
+            <strong>Chunk-Level CAS</strong>
+            FastCDC · Next
+        </div>
+    </div>
+
+
+    <h2>Our local architecture</h2>
+
+    <div class="architecture">
+
+        <div style="max-width:850px; margin:30px auto; text-align:center;">
+
+            <!-- CLI -->
+            <div class="arch-node" style="width:260px; margin:0 auto;">
+                <strong>AI-Git CLI</strong>
+            </div>
+
+            <div style="font-size:25px; color:#777; margin:12px;">↓</div>
+
+            <!-- VCS -->
+            <div class="arch-node" style="width:260px; margin:0 auto;">
+                <strong>Git / VCS Layer</strong>
+            </div>
+
+            <div style="font-size:25px; color:#777; margin:12px;">↓</div>
+
+            <!-- VCS OBJECT STORE + AI-GIT CAS -->
+            <div style="
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:40px;
+                align-items:center;
+                justify-items:center;
+            ">
+
+                <div class="arch-node" style="width:260px;">
+                    <strong>VCS Object Store</strong>
+                    <small style="display:block; margin-top:6px; color:#888;">
+                        Blob / Tree / Commit
+                    </small>
+                </div>
+
+                <div class="arch-node" style="width:260px;">
+                    <strong>AI-Git CAS</strong>
+                </div>
+
+            </div>
+
+            <div style="font-size:25px; color:#777; margin:12px;">↓</div>
+
+            <!-- STORAGE MANAGER -->
+            <div class="arch-node" style="width:260px; margin:0 auto;">
+                <strong>StorageManager</strong>
+            </div>
+
+            <div style="font-size:25px; color:#777; margin:12px;">↓</div>
+
+            <!-- OBJECTSTORE + METADATADB -->
+            <div style="
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:40px;
+                align-items:start;
+                justify-items:center;
+            ">
+
+                <div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>ObjectStore</strong>
+                        <small style="display:block; margin-top:6px; color:#888;">
+                            Physical CAS objects
+                        </small>
+                    </div>
+
+                    <div style="font-size:25px; color:#777; margin:12px;">
+                        ↓
+                    </div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>CAS Objects</strong>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>MetadataDB</strong>
+                        <small style="display:block; margin-top:6px; color:#888;">
+                            Object metadata
+                        </small>
+                    </div>
+
+                    <div style="font-size:25px; color:#777; margin:12px;">
+                        ↓
+                    </div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>SQLite</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h2>Local → Remote</h2>
+
+    <div class="architecture">
+
+        <div style="max-width:850px; margin:30px auto; text-align:center;">
+
+            <!-- CLI -->
+            <div class="arch-node" style="width:260px; margin:0 auto;">
+                <strong>AI-Git CLI</strong>
+            </div>
+
+            <div style="font-size:25px; color:#777; margin:12px;">
+                ↓
+            </div>
+
+            <!-- STORAGE MANAGER -->
+            <div class="arch-node" style="width:260px; margin:0 auto;">
+                <strong>StorageManager</strong>
+            </div>
+
+            <div style="font-size:25px; color:#777; margin:12px;">
+                ↓
+            </div>
+
+            <!-- LOCAL + REMOTE -->
+            <div style="
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:40px;
+                align-items:start;
+                justify-items:center;
+            ">
+
+                <!-- LOCAL SIDE -->
+                <div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>Local CAS</strong>
+                    </div>
+
+                    <div style="font-size:25px; color:#777; margin:12px;">
+                        ↓
+                    </div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>ObjectStore</strong>
+                    </div>
+
+                    <div style="font-size:25px; color:#777; margin:12px;">
+                        ↓
+                    </div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>SQLite</strong>
+                        <small style="display:block; margin-top:6px; color:#888;">
+                            Local metadata
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <!-- REMOTE SIDE -->
+                <div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>Remote CAS</strong>
+                    </div>
+
+                    <div style="font-size:25px; color:#777; margin:12px;">
+                        ↓
+                    </div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>Client API</strong>
+                    </div>
+
+                    <div style="font-size:25px; color:#777; margin:12px;">
+                        ↓
+                    </div>
+
+                    <div class="arch-node" style="width:260px;">
+                        <strong>Server</strong>
+                    </div>
+
+                    <div style="font-size:25px; color:#777; margin:12px;">
+                        ↓
+                    </div>
+
+
+                    <!-- POSTGRES + MINIO -->
+                    <div style="
+                        display:grid;
+                        grid-template-columns:1fr 1fr;
+                        gap:15px;
+                    ">
+
+                        <div class="arch-node" style="width:100%;">
+                            <strong>PostgreSQL</strong>
+                            <small style="display:block; margin-top:6px; color:#888;">
+                                Metadata
+                            </small>
+                        </div>
+
+                        <div class="arch-node" style="width:100%;">
+                            <strong>MinIO</strong>
+                            <small style="display:block; margin-top:6px; color:#888;">
+                                Object storage
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <p>
+        Our local CAS is working. The next step is extending it to the
+        remote layer before moving to chunk-level storage with FastCDC.
+    </p>
+
+    `
+},
+   
 code:{
 kicker:"SEASON 2 · EPISODE 3",
 title:"How is it Built?",
