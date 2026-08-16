@@ -86,8 +86,8 @@ html:`
 <h2>but what will you do?</h2>
 <div class=".checkpoint-flow">
 <div class="cp"><strong>Identify files by their content using hashing.</strong><br><img src="assets/double_hashing.gif" alt="Double Hashing" height=200px><br><br>1. Handles hash collision<br>2. XXHash + SHA-256<br>3. OpenSSL's products<br>4. Faster lookups</div>
-<div class="cp diff"><strong>Deduplication</strong><br><br>1. Same content but different file name<br>2. Next step: chunk-level deduplication with FastCDC<br>3.Eventually, only changed chunks need to be stored<br></div>
-<div class="cp"><strong>Chunking</strong><br><img src="assets/deduplication.png"><br>FastCDC</div>
+<div class="cp diff"><strong>Deduplication</strong><br><br>1. Same content but different file name<br><br>2.Eventually, only changed chunks need to be stored<br></div>
+<div class="cp"><strong>Chunking</strong><br><img src="assets/fastcdc.png" height=300px><br>FastCDC</div>
 <div class="cp diff"><strong>Double Storage and Metadata</strong><br><b>Local — SQLite:</b>
     tracks metadata about objects stored locally.
     <br>
@@ -105,8 +105,8 @@ html:`
     while MinIO stores the actual binary objects.
 
     <br><br></div>
-<div class="cp"><strong>Building our own API</strong><br>1. Client ↔ server communication<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone <br> 4. Remote object transfer</div>
-<div class="cp diff"><strong>Website</strong><br>GitHub-like Interface</div>
+<div class="cp"><strong>Building our own API</strong><br><img src= "assets/storage.png" height=300px><br>1. Client ↔ server communication<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone <br> 4. Remote object transfer</div>
+<div class="cp diff"><strong>Website</strong><br><img src= "assets/website1.png" height=300px><br>GitHub-like Interface (image is ai generated)</div>
 `},
 architecture:{
 kicker:"SEASON 2 · EPISODE 2",
