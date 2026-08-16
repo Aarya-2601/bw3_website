@@ -284,20 +284,16 @@ checkpoints:{
 
 <h2>but what will you do?</h2>
 
-
-<div class="stupid">
 <div class="cp diff">
 
 <strong>
 Store any type of files.
 </strong>
 
-<div class="cpimg>
+<div class="cpimg">
 
 Everything is converted to binary!
-
 </div>
-
 </div>
 
 <div class="cp">
@@ -1238,44 +1234,7 @@ demo:{
     html:`
 
 <div class="info-box">
-
-<h2>
-Now show the real thing.
-</h2>
-
-<p>
-
-This section is intentionally simple so you can transition
-from the cinematic website into your actual live product.
-
-</p>
-
-<ol>
-
-<li>Create or select a checkpoint.</li>
-
-<li>Create a second checkpoint.</li>
-
-<li>Change the model state.</li>
-
-<li>Run the comparison.</li>
-
-<li>Show exactly what AI Git found.</li>
-
-</ol>
-
-</div>
-
-
-<div
-class="big-meme"
-style="margin-top:30px"
->
-
-THE AI HAS A HISTORY.
-
-<small>🚀</small>
-
+    <video width="1100" controls><source src="assets/dedupvideo.mp4" type="video/mp4"></video>
 </div>
 
 `
