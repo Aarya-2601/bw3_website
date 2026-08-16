@@ -359,6 +359,20 @@ checkpoints:{
 
 
 <div class="stupid">
+<div class="cp diff">
+
+<strong>
+Store any type of files.
+</strong>
+
+<div class="cpimg>
+
+Everything is converted to binary!
+
+</div>
+
+</div>
+
 <div class="cp">
 
 <strong>
@@ -393,11 +407,9 @@ height="300px"
 
 </div>
 
-
-
 <div class="cp diff">
 
-<strong>Deduplication</strong>
+<strong>Content Addressable Storage (CAS)</strong>
 
 <div class="cpimg">
 
@@ -549,13 +561,9 @@ architecture:{
 
     kicker:"SEASON 2 · EPISODE 2",
 
-    title:"Under the hood",
+    title:"Nobody cares how it works",
 
     html:`
-
-
-<h2>How AI-Git evolved</h2>
-
 
 <div class="checkpoint-flow">
 
@@ -1207,14 +1215,9 @@ code:{
 
     kicker:"SEASON 2 · EPISODE 3",
 
-    title:"The part that we don't understand",
+    title:"c.o.d.e",
 
     html:`
-
-<h2>
-Thanks to ChatGPT, we know we don't
-</h2>
-
 <h2>
 <s>
 These are the only codes y'all CAN ask us questions about, understood?
