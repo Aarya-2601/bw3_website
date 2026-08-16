@@ -67,7 +67,7 @@ html:`
     <br>Opaque objects = zero deduplication
     <br><b>Takes a tonne of money for 5GB storage</b>
     <br><b>Hates to see us coming</b></p>
-    <img src="assets/gitlfs.png" alt="Git LFS" style="height: 325px"></div>
+    <img src="assets/gitlfs_new.png" alt="Git LFS" style="height: 300px"></div>
 <div class="info-box"><h3>DVC</h3>
     <p>Designed specifically for data and ML workflows
     <br>Have to run both git and DVC commands
