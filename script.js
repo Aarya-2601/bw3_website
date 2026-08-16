@@ -110,7 +110,7 @@ html:`
 `},
 architecture:{
 kicker:"SEASON 2 · EPISODE 2",
-title:"UNDER THE HOOD",
+title:"Under the hood",
 html:`
 <div class="checkpoint-flow">
 <div class="cp"><strong>Double Hashing<br>OpenSSL</strong>Initial model</div><div class="arrow">→</div>
@@ -128,7 +128,7 @@ html:`
 <h2>Make this your real architecture</h2><p>Use the architecture card on the homepage as the entry point to explain data flow, storage, comparison and retrieval.</p>`},
 code:{
 kicker:"SEASON 2 · EPISODE 3",
-title:"How We Made It",
+title:"How is it Built?",
 html:`
 <p>This is a presentation-friendly code viewer. Replace the sample with your real implementation.</p>
 <div class="code-window"><div class="code-top">checkpoint_diff.py</div><pre><code><span class="keyword">def</span> compare_checkpoints(old, new):
