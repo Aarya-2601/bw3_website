@@ -79,16 +79,84 @@ html:`
 </div>
 <h2>The idea</h2><p class="lead">Combine everything into one so you don't have to jump between things.</p>
 <img class=",big-meme" src="assets/trampoline-fitness.gif" alt="Jumping Jhapak" height="400px">`},
+memes:{
+    kicker:"SEASON 1 · BONUS EPISODE",
+    title:"Because Our Cool Mentors",
+    html:`
+        <h2>choose cooler mentees&#128526;</h2>
+
+        <h2>Display of our creativity</h2>
+
+        <div class="big-meme">
+            <img
+                src="assets/makefile.png"
+                class="meme-gif"
+                alt="Mentor meme"
+                height="300px"
+            >
+            <img
+                src="assets/ppt2.png"
+                class="meme-gif"
+                alt="Mentor meme"
+                height="300px"
+            >
+            <img
+                src="assets/blog.png"
+                class="meme-gif"
+                alt="Mentor meme"
+                height="300px"
+            >
+        </div>
+
+        <h2>When we tell our mentors we want to quit</h2>
+        <div class="big-meme">
+
+            <img 
+                src="assets/utried.png"
+                class="meme-gif"
+                alt="Coding meme"
+                height="300px"
+            >
+            <img src="assets/zeher.png" height="300px">
+            <img src="assets/heart_touching.png" height="300px">
+        </div>
+
+
+        <h2>Debugging At 2a.m.</h2>
+        <div class="big-meme">
+            <img 
+                src="assets/hairpull.png"
+                class="meme-gif"
+                alt="Coding meme"
+                height="300px"
+            >
+            <img src="assets/squinting.png" height="300px">
+            <img src="assets/smileinpain.png" height="300px">
+
+        </div>
+
+
+        <div class="meme-ending">
+            <p>Through the errors.</p>
+            <p>Through the crying.</p>
+            <p>Through the countless ideas we had to abandon.</p>
+            <h3>WE SURVIVED.</h3>
+            <h1>Thanks to the mentors who had to survive us 💀</h1>
+
+        </div>
+
+    `
+},
 checkpoints:{
 kicker:"SEASON 2 · EPISODE 1",
 title:"Fine...",
 html:`
 <h2>but what will you do?</h2>
 <div class=".checkpoint-flow">
-<div class="cp"><strong>Identify files by their content using hashing.</strong><br><img src="assets/double_hashing.gif" alt="Double Hashing" height=200px><br><br>1. Handles hash collision<br>2. XXHash + SHA-256<br>3. OpenSSL's products<br>4. Faster lookups</div>
-<div class="cp diff"><strong>Deduplication</strong><br><br>1. Same content but different file name<br><br>2.Eventually, only changed chunks need to be stored<br></div>
-<div class="cp"><strong>Chunking</strong><br><img src="assets/fastcdc.png" height=300px><br>FastCDC</div>
-<div class="cp diff"><strong>Double Storage and Metadata</strong><br><b>Local — SQLite:</b>
+<div class="cp"><strong>Identify files by their content using hashing.</strong><div class="cpimg"><img src="assets/double_hashing.gif" alt="Double Hashing" height=300px><br>1. Handles hash collision<br><br>2. XXHash + SHA-256<br><br>3. OpenSSL's products<br><br>4. Faster lookups</div></div>
+<div class="cp diff"><strong>Deduplication</strong><div class="cpimg"><br>1. Same content but different file name<br><br>2.Eventually, only changed chunks need to be stored<br></div></div>
+<div class="cp"><strong>Chunking</strong><div class="cpimg"><br><img src="assets/fastcdc.png" height=300px><br>FastCDC</div></div>
+<div class="cp diff"><strong>Double Storage and Metadata</strong><div class="cpimg"><br><b>Local — SQLite:</b>
     tracks metadata about objects stored locally.
     <br>
     Object ID, size, type and creation time.
@@ -104,14 +172,15 @@ html:`
     PostgreSQL manages centralized metadata,
     while MinIO stores the actual binary objects.
 
-    <br><br></div>
-<div class="cp"><strong>Building our own API</strong><br><img src= "assets/storage.png" height=300px><br>1. Client ↔ server communication<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone <br> 4. Remote object transfer</div>
-<div class="cp diff"><strong>Website</strong><br><img src= "assets/website1.png" height=300px><br>GitHub-like Interface (image is ai generated)</div>
+    <br></div></div>
+<div class="cp"><strong>Building our own API</strong><div class="cpimg"><br><img src= "assets/storage.png" height=300px><br>1. Client ↔ server communication<br>2. MinIO Presigned URLs<br> 3.Push, Pull and Clone <br> 4. Remote object transfer</div></div>
+<div class="cp diff"><strong>Website</strong><div class="cpimg"><br><img src= "assets/website1.png" height=300px><br>GitHub-like Interface (image is ai generated)</div></div>
 `},
 architecture:{
 kicker:"SEASON 2 · EPISODE 2",
-title:"Under the hood",
+title:"Nobody cares how it works",
 html:`
+<h2>only the LYs do...</h2>
 <div class="checkpoint-flow">
 <div class="cp"><strong>Double Hashing<br>OpenSSL</strong>Initial model</div><div class="arrow">→</div>
 <div class="cp"><strong>Deduplication</strong>After training</div><div class="arrow">→</div>
@@ -128,21 +197,19 @@ html:`
 <h2>Make this your real architecture</h2><p>Use the architecture card on the homepage as the entry point to explain data flow, storage, comparison and retrieval.</p>`},
 code:{
 kicker:"SEASON 2 · EPISODE 3",
-title:"How is it Built?",
+title:"The part that we don't understand",
 html:`
-<p>This is a presentation-friendly code viewer. Replace the sample with your real implementation.</p>
-<div class="code-window"><div class="code-top">checkpoint_diff.py</div><pre><code><span class="keyword">def</span> compare_checkpoints(old, new):
-    old_state = load_checkpoint(old)
-    new_state = load_checkpoint(new)
+<h2>Thanks to ChatGPT, we know we don't</h2>
+<h2><s>These are the only codes y'all CAN ask us questions about, understood?</s></h2>
+    <div class="vscode-button-container">
 
-    changes = {}
-
-    <span class="keyword">for</span> name <span class="keyword">in</span> old_state:
-        <span class="keyword">if</span> name <span class="keyword">in</span> new_state:
-            <span class="keyword">if</span> old_state[name] != new_state[name]:
-                changes[name] = <span class="string">"changed"</span>
-
-    <span class="keyword">return</span> changes</code></pre></div>`},
+    <a
+        href="vscode://file/C:/Users/Keya/Desktop/AI-GIT"
+        class="open-vscode-btn"
+    >
+        <span>⌘</span>
+        OPEN PROJECT IN VS CODE
+    </a>`},
 progress:{
 kicker:"SEASON 3 · OUR JOURNEY",
 title:"We did what we had to do...",
