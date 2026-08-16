@@ -295,34 +295,36 @@ button{
 .cards{
     display:grid;
     grid-template-columns:repeat(5,1fr);
-    gap:10px;
+    gap:25px;
 }
 
 .card{
-    background:#111;
-    border-radius:4px;
+    background:#151515;
+    border-radius:14px;
     overflow:hidden;
 
     cursor:pointer;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease, background 0.3s ease;
 
     min-width:0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .card:hover{
-    transform:scale(1.08) translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    transform:scale(1.05) translateY(-6px);
+    box-shadow: 0 15px 30px rgba(229, 9, 20, 0.2);
     z-index:10;
     position:relative;
+    background:#1c1c1c;
 }
 
 .card-art{
-    height:170px;
+    height:220px;
 
     display:grid;
     place-items:center;
 
-    font-size:55px;
+    font-size:65px;
     font-weight:900;
 }
 
