@@ -1086,7 +1086,7 @@ demo:{
     <video style="width: 100%; height: auto; display: block;" controls><source src="assets/dedupvideo.mp4" type="video/mp4"></video>
 </div>
 <div>
-<img src="assets/image.png">
+<img src="assets/image.png" height="700 px">
 </div>
 
 `
