@@ -614,6 +614,17 @@ Blob / Tree / Commit
 
 </small>
 </a>
+</div>
+
+
+<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+<a href="https://en.wikipedia.org/wiki/Content-addressable_storage" target="_blank"
+class="arch-node"
+style="width:260px;"
+>
+
+<strong>AI-Git CAS</strong>
+</a>
 
 <div class="down-arrow"></div>
 
@@ -707,18 +718,6 @@ style="width:100%;"
 </div>
 
 </div>
-
-</div>
-
-
-<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-<a href="https://en.wikipedia.org/wiki/Content-addressable_storage" target="_blank"
-class="arch-node"
-style="width:260px;"
->
-
-<strong>AI-Git CAS</strong>
-</a>
 </div>
 
 </div>
@@ -1083,8 +1082,8 @@ demo:{
 
     html:`
 
-<div class="info-box">
-    <video width="1100" controls><source src="assets/dedupvideo.mp4" type="video/mp4"></video>
+<div class="info-box" style="padding: 0; overflow: hidden;">
+    <video style="width: 100%; height: auto; display: block;" controls><source src="assets/dedupvideo.mp4" type="video/mp4"></video>
 </div>
 
 `

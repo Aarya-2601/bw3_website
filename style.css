@@ -12,6 +12,7 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body{
@@ -265,6 +266,14 @@ button{
 
 
 /* GENERAL SECTIONS */
+
+.hero,
+.continue,
+.row,
+.final-banner{
+    scroll-snap-align: start;
+    scroll-margin-top: 90px;
+}
 
 .continue,
 .row{
@@ -721,28 +730,64 @@ button{
     font-size:17px;
 }
 
+.episode .lead {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--red);
+    margin-top: -10px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
 
 /* EPISODE GRID */
 
 .episode-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:25px;
+    gap:35px;
 }
 
 .info-box{
-    background:#151515;
-    border:1px solid #292929;
-    border-radius:8px;
+    background: linear-gradient(145deg, #151515, #111);
+    border:1px solid #333;
+    border-radius:12px;
+    padding:30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
 
-    padding:25px;
+.info-box:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+}
+
+.info-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
 }
 
 .episode-image{
     max-width:100%;
     height:auto;
-
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     margin-top:20px;
+    border: 1px solid #333;
+}
+
+.big-meme {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.meme-gif {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    border: 1px solid #444;
 }
 
 
