@@ -1085,6 +1085,9 @@ demo:{
 <div class="info-box" style="padding: 0; overflow: hidden;">
     <video style="width: 100%; height: auto; display: block;" controls><source src="assets/dedupvideo.mp4" type="video/mp4"></video>
 </div>
+<div>
+<img src="assets/image.png">
+</div>
 
 `
 
